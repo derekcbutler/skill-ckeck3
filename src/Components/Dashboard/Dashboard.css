@@ -1,0 +1,11 @@
+.dash-background {
+    width: 100vw;
+    height: 50vh;
+}
+
+.dash-menu {
+   
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
