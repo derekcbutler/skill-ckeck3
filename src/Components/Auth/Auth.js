@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { updateUser, login } from "../../ducks/reducer";
+import "./Auth.css";
 
 class Auth extends React.Component {
   constructor() {
@@ -34,7 +35,7 @@ class Auth extends React.Component {
       .then(res => {
         this.props.updateUser(res.data);
         this.props.history.push("/dashboard");
-        this.props.login()
+        this.props.login();
         this.setState({
           username: "",
           password: ""
@@ -44,7 +45,7 @@ class Auth extends React.Component {
   }
 
   login() {
-    console.log('login:', this.state)
+    console.log("login:", this.state);
     // const { username, password } = this.state;
     axios
       .post("/auth/login", {
@@ -55,9 +56,9 @@ class Auth extends React.Component {
         this.props.updateUser(res.data);
         this.props.history.push("/dashboard");
         this.setState({ username: "", password: "" });
-        this.props.login()
+        this.props.login();
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -65,19 +66,21 @@ class Auth extends React.Component {
     // const { user } = this.props
     console.table(this.props);
     return (
-      <div>
-        <input
-          value={this.state.username}
-          name="username"
-          onChange={e => this.handleInput(e)}
-        />
-        <input
-          value={this.state.password}
-          name="password"
-          onChange={e => this.handleInput(e)}
-        />
-        <button onClick={this.login}>Login</button>
-        <button onClick={this.register}>Register</button>
+      <div className="Auth">
+        <div className='boxen'>
+          <input
+            value={this.state.username}
+            name="username"
+            onChange={e => this.handleInput(e)}
+          />
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={e => this.handleInput(e)}
+          />
+          <button onClick={this.login}>Login</button>
+          <button onClick={this.register}>Register</button>
+        </div>
       </div>
     );
   }
