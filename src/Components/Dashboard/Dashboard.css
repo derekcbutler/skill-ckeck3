@@ -1,12 +1,18 @@
 .dash-background {
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
+    background-color: wheat;
     
 }
 
 .dash-menu {
-   
+    width: 80vw;
+    height: 30px;
+    border: black 4px solid;
     display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    justify-items: center;
+    background-color: white;
+    align-items: center;
+    
+
 }

@@ -9,9 +9,23 @@
 .boxen{
     width: 35vw;
     height: 50vh;
-    border: black solid;
+    /* border: black solid; */
+    box-shadow: 1px 1px 5px 1px black;
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    border-radius: 25px;
+    justify-content: center;
+    color: white;
 
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-button{
+    border:none;
+    background-color: transparent;
+    color: white;
+    display: flex;
 }

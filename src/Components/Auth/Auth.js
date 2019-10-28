@@ -67,19 +67,27 @@ class Auth extends React.Component {
     console.table(this.props);
     return (
       <div className="Auth">
-        <div className='boxen'>
-          <input
-            value={this.state.username}
-            name="username"
-            onChange={e => this.handleInput(e)}
-          />
-          <input
-            value={this.state.password}
-            name="password"
-            onChange={e => this.handleInput(e)}
-          />
-          <button onClick={this.login}>Login</button>
-          <button onClick={this.register}>Register</button>
+        <div className="boxen">
+          <div className='input'>
+            username :
+            <input
+              value={this.state.username}
+              name="username"
+              onChange={e => this.handleInput(e)}
+            />
+            password :
+            <input
+              value={this.state.password}
+              name="password"
+              onChange={e => this.handleInput(e)}
+            />
+          </div>
+          <button className="intro-button" onClick={this.login}>
+            Login
+          </button>
+          <button className="intro-button" onClick={this.register}>
+            Register
+          </button>
         </div>
       </div>
     );
